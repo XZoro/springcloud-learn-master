@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="openFeign-provider" />
+        <module name="openFeign-consumer" />
+        <module name="sleuth-product" />
+        <module name="seata-account" />
+        <module name="sleuth-order" />
+        <module name="oauth2-auth-resource-in-memory" />
+        <module name="cloud-gateway" />
+        <module name="gateway-sentinel" />
+        <module name="oauth2-auth-resource-jwt" />
+        <module name="nacos-consumer" />
+        <module name="dao" />
+        <module name="gateway-sleuth" />
+        <module name="nacos-config" />
+        <module name="gateway-provider" />
+        <module name="oauth2-auth-server-jwt" />
+        <module name="sentinel-service" />
+        <module name="seata-order" />
+        <module name="oauth2-auth-server-in-memory" />
+        <module name="nacos-provider" />
+        <module name="bean" />
+        <module name="seata-storage" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gateway" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bean" options="" />
+      <module name="cloud-gateway" options="" />
+      <module name="dao" options="" />
+      <module name="gateway" options="-parameters" />
+      <module name="gateway-provider" options="" />
+      <module name="gateway-sentinel" options="" />
+      <module name="gateway-sleuth" options="" />
+      <module name="nacos-config" options="" />
+      <module name="nacos-consumer" options="" />
+      <module name="nacos-provider" options="" />
+      <module name="openFeign-consumer" options="" />
+      <module name="openFeign-provider" options="" />
+      <module name="seata-account" options="" />
+      <module name="seata-storage" options="" />
+      <module name="sentinel-service" options="" />
+      <module name="sleuth-order" options="" />
+      <module name="sleuth-product" options="" />
+    </option>
+  </component>
+</project>

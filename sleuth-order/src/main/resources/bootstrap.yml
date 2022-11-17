@@ -1,0 +1,37 @@
+server:
+  port: 9033
+
+spring:
+  ## 指定服务名称，在nacos中的名字
+  application:
+    name: sleuth-order
+  profiles:
+    active: test
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  sleuth:
+    sampler:
+      # 日志数据采样百分比，默认0.1（10%），这里为了测试设置成了100%，生产环境只需要0.1
+      probability: 1.0
+  zipkin:
+    # zipkin server的请求地址
+    base-url: http://127.0.0.1:9411
+    # 让nacos把它当成一个url，而不要当服务名
+    discovery-client-enabled: false
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 1000
+        readTimeout: 1000
+  httpclient:
+    # ?? Http Client
+    enabled: true
+
+logging:
+  level:
+    com.example.openfeignconsumer.openfeign: debug
+

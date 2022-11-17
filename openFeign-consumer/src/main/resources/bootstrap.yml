@@ -1,0 +1,33 @@
+server:
+  port: 9006
+
+spring:
+  application:
+    name: openFeign-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+  httpclient:
+    # ?? Http Client
+    enabled: true
+  sentinel:
+    enabled: true
+
+logging:
+  level:
+    com.example.openfeignconsumer.openfeign: debug
+
+management:
+  endpoint:
+    web:
+      exposure:
+        ## yml?????????????????????????
+        include: '*'

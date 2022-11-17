@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/bean/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dao/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway-sentinel/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway-sleuth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nacos-config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nacos-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nacos-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nacos-provider/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oauth2-auth-resource-in-memory/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oauth2-auth-resource-in-memory/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oauth2-auth-resource-jwt/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oauth2-auth-resource-jwt/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oauth2-auth-server-in-memory/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oauth2-auth-server-in-memory/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oauth2-auth-server-jwt/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oauth2-auth-server-jwt/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/openFeign-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/openFeign-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/openFeign-provider/src/main/resources/bootstrap.yml" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/seata-account/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-storage/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-storage/src/main/resources/bootstrap.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sentinel-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sleuth-order/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sleuth-product/src/main/java" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,16 @@
+server:
+  port: 9003
+
+spring:
+  application:
+    name: nacos-config
+  profiles:
+    active: test
+  cloud:
+    nacos:
+      config:
+        namespace: 18222f6a-b970-4b53-8f6d-a5e8ba4bee91
+        server-addr: 127.0.0.1:8848
+        file-extension: yml
+        group: DEFAULT_GROUP
+

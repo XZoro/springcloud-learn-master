@@ -1,0 +1,19 @@
+server:
+  port: 9023
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        ## 指定文件后缀末yaml
+        file-extension: yaml
+
+
+
+
+

@@ -1,0 +1,54 @@
+server:
+  port: 9020
+
+spring:
+  ## 指定服务名称，在nacos中的名字
+  application:
+    name: seata-storage
+  profiles:
+    active: test
+  cloud:
+    nacos:
+      config:
+        namespace: 18222f6a-b970-4b53-8f6d-a5e8ba4bee91
+        server-addr: 127.0.0.1:8848
+        file-extension: yml
+        group: DEFAULT_GROUP
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: 18222f6a-b970-4b53-8f6d-a5e8ba4bee91
+
+## 客户端seata的相关配置
+seata:
+  ## 是否开启seata，默认true
+  enabled: true
+  application-id: ${spring.application.name}
+  ## seata事务组的名称，一定要和config.tx(nacos)中配置的相同
+  tx-service-group: ${spring.application.name}-tx-group
+  ## 配置中心的配置
+  config:
+    ## 使用类型nacos
+    type: nacos
+    ## nacos作为配置中心的相关配置，需要和server在同一个注册中心下
+    nacos:
+      ## 命名空间，需要server端(registry和config)、nacos配置client端 (registry和config)保持一致
+      namespace: 19628dd6-d6a7-4ec9-9c62-af47ec5084d6
+      ## 地址
+      server-addr: localhost:8848
+      ## 组， 需要server端(registry和config)、nacos配置client端 (registry和config)保持一致
+      group: SEATA_GROUP
+      ## 用户名和密码
+      username: nacos
+      password: nacos
+  registry:
+    type: nacos
+    nacos:
+      ## 这里的名字一定要和seata服务端中的名称相同，默认是seata-server
+      application: seata-server
+      ## 需要server端(registry和config)、nacos配置client端(registry和 config)保持一致
+      group: SEATA_GROUP
+      namespace: 19628dd6-d6a7-4ec9-9c62-af47ec5084d6
+      username: nacos
+      password: nacos
+      server-addr: localhost:8848
+
