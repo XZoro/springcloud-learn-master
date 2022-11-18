@@ -1,0 +1,22 @@
+# Project exclude paths
+/bean/target/
+/cloud-gateway/target/
+/dao/target/
+/gateway-provider/target/
+/gateway-sentinel/target/
+/gateway-sleuth/target/
+/nacos-config/target/
+/nacos-consumer/target/
+/nacos-provider/target/
+/oauth2-auth-resource-in-memory/target/
+/oauth2-auth-resource-jwt/target/
+/oauth2-auth-server-in-memory/target/
+/oauth2-auth-server-jwt/target/
+/openFeign-consumer/target/
+/openFeign-provider/target/
+/seata-account/target/
+/seata-order/target/
+/seata-storage/target/
+/sentinel-service/target/
+/sleuth-order/target/
+/sleuth-product/target/
