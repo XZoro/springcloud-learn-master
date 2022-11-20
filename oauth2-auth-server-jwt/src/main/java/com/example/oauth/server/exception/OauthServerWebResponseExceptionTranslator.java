@@ -32,7 +32,7 @@ public class OauthServerWebResponseExceptionTranslator implements WebResponseExc
         if (e instanceof UnsupportedGrantTypeException){
             resultCode = ResultCode.UNSUPPORTED_GRANT_TYPE;
         } else if (e instanceof InvalidGrantException) {
-            resultCode = ResultCode.UNSUPPORTED_GRANT_TYPE;
+            resultCode = ResultCode.USERNAME_OR_PASSWORD_ERROR;
         }
         return new ResultMsg(resultCode.getCode(), resultCode.getMsg(), null);
     }

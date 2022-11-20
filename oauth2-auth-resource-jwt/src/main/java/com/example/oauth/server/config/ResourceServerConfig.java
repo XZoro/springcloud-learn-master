@@ -1,5 +1,7 @@
 package com.example.oauth.server.config;
 
+import com.example.oauth.server.exception.OauthResourceAuthenticationEntryPoint;
+import com.example.oauth.server.exception.RequestAccessDeniedHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,6 +33,12 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Resource
     private JwtAccessTokenConverter jwtAccessTokenConverter;
 
+    @Resource
+    private RequestAccessDeniedHandler requestAccessDeniedHandler;
+
+    @Resource
+    private OauthResourceAuthenticationEntryPoint authenticationEntryPoint;
+
     /**
      * 配置令牌校验服务，客户端携带令牌访问资源，作为资源端必须检验令牌的真伪
      * TODO 使用JWT作为TOKEN则不必远程调用check_token校验
@@ -52,6 +60,11 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     public void configure(ResourceServerSecurityConfigurer resource){
         //配置唯一资源id
         resource.resourceId("res1")
+                //定制令牌失效的提示信息
+                .authenticationEntryPoint(authenticationEntryPoint)
+                //定制权限不足的提示信息
+                .accessDeniedHandler(requestAccessDeniedHandler)
+                //配置令牌校验服务
                 .tokenServices(tokenServices());
     }
 

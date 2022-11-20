@@ -27,7 +27,7 @@ public class OauthServerClientCredentialsTokenEndpointFilter extends ClientCrede
      */
     public OauthServerClientCredentialsTokenEndpointFilter(AuthorizationServerSecurityConfigurer configurer, AuthenticationEntryPoint authenticationEntryPoint) {
         this.configurer = configurer;
-        this.authenticationEntryPoint=authenticationEntryPoint;
+        this.authenticationEntryPoint = authenticationEntryPoint;
     }
 
     @Override

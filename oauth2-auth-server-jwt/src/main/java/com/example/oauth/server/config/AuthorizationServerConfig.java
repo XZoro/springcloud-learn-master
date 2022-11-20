@@ -1,5 +1,8 @@
 package com.example.oauth.server.config;
 
+import com.example.oauth.server.exception.OauthServerAuthenticationEntryPoint;
+import com.example.oauth.server.exception.OauthServerWebResponseExceptionTranslator;
+import com.example.oauth.server.filter.OauthServerClientCredentialsTokenEndpointFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -11,6 +14,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.code.AuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.code.InMemoryAuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.token.AuthorizationServerTokenServices;
@@ -49,6 +53,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     @Resource
     private JwtAccessTokenConverter jwtAccessTokenConverter;
+
+    @Resource
+    private OauthServerAuthenticationEntryPoint authenticationEntryPoint;
 
     /**
      * 配置客户端详情，并不是所有的客户端都能接入授权服务
@@ -102,6 +109,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @SuppressWarnings("ALL")
     public void configure(AuthorizationServerEndpointsConfigurer endpoints){
         endpoints
+                .exceptionTranslator(new OauthServerWebResponseExceptionTranslator())
                 .authorizationCodeServices(authorizationCodeServices())
                 .authenticationManager(authenticationManager)
                 .tokenServices(tokenServices())
@@ -113,10 +121,16 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
      */
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security){
+        //自定义clientCredentialsTokenEndpointFilter，用于处理客户端id，密码错误的异常
+        OauthServerClientCredentialsTokenEndpointFilter endpointFilter = new OauthServerClientCredentialsTokenEndpointFilter(security, authenticationEntryPoint);
+        endpointFilter.afterPropertiesSet();
+        security.addTokenEndpointAuthenticationFilter(endpointFilter);
+
         security
+                .authenticationEntryPoint(authenticationEntryPoint)
                 .tokenKeyAccess("permitAll")
-                .checkTokenAccess("permitAll")
-                .allowFormAuthenticationForClients();
+                .checkTokenAccess("permitAll");
+                //.allowFormAuthenticationForClients();
     }
 
 
