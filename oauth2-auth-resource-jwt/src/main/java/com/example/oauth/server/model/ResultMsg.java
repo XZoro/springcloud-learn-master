@@ -1,9 +1,25 @@
 package com.example.oauth.server.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
 /**
  * 结果封装
  * @author xzq
  * @date 2022年11月17日 9:53
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Accessors(chain = true)
 public class ResultMsg {
+    private Integer code;
+
+    private String msg;
+
+    private Object data;
 }
