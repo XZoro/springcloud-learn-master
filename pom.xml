@@ -36,6 +36,8 @@
         <module>oauth2-auth-resource-in-memory</module>
         <module>oauth2-auth-server-jwt</module>
         <module>oauth2-auth-resource-jwt</module>
+        <module>rabbitmq-producer</module>
+        <module>rabbitmq-consumer</module>
     </modules>
 
     <dependencyManagement>
@@ -63,6 +65,11 @@
                 <version>2.2.1.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.rabbitmq</groupId>
+                <artifactId>amqp-client</artifactId>
+                <version>5.7.3</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

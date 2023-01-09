@@ -22,6 +22,10 @@
     <file url="file://$PROJECT_DIR$/openFeign-consumer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/openFeign-provider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/openFeign-provider/src/main/resources/bootstrap.yml" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/rabbitmq-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rabbitmq-consumer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rabbitmq-producer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rabbitmq-producer/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/seata-account/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/seata-storage/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/seata-storage/src/main/resources/bootstrap.yml" charset="UTF-8" />

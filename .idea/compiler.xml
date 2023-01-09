@@ -9,9 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="openFeign-provider" />
         <module name="openFeign-consumer" />
+        <module name="rabbitmq-consumer" />
         <module name="sleuth-product" />
         <module name="seata-account" />
         <module name="sleuth-order" />
+        <module name="rabbitmq-producer" />
         <module name="oauth2-auth-resource-in-memory" />
         <module name="cloud-gateway" />
         <module name="gateway-sentinel" />
